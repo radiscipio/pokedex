@@ -11,9 +11,9 @@ __________________________
 ##Wireframes
 
 They're color coded!
-  [Link 1](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/gfyuofjliehxwin4cypd.jpg)
-  [Link 2](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/cvoocicna4whko7exqkc.jpg)
-  [Link 3](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/cnl4ywzjsoi3zx3ezfab.jpg)
+  [Link 1](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/gfyuofjliehxwin4cypd.jpg)</br>
+  [Link 2](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/cvoocicna4whko7exqkc.jpg)</br>
+  [Link 3](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/cnl4ywzjsoi3zx3ezfab.jpg)</br>
   [Link 4](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/kf7tu04hdbbesgdkuapd.jpg)</br>
 
 ## API Info
@@ -25,24 +25,19 @@ They're color coded!
 ## MVP/ Post MVP
 
 #### MVP
-> Render data onto screen
->
-> Allow user to interact with rendered components
->
-> Save a favorite group of 6 Pokemon
->
-> View all Pokemon
+- Render data onto screen
+- Allow user to interact with rendered components
+- Save a favorite group of 6 Pokemon
+- View all Pokemon
 
 #### Post MVP
 
-> Add in all the other Pokemon
->
-> Save multiple teams
->
-> Create data data structure to see all the branches of evolved forms
+- Add in all the other Pokemon
+- Save multiple teams
+- Create data data structure to see all the branches of evolved forms
 
 ## React Component Hierarchy
-![Hierarchy](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/gfyuofjliehxwin4cypd.jpg)
+[Hierarchy](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/gfyuofjliehxwin4cypd.jpg)
 </br>
 
 ## Est. Time
@@ -62,9 +57,6 @@ They're color coded!
 
 ```js
 results": [
-{},
-{},
-{},
 {
 "name": "charmander",
 "url": "https://pokeapi.co/api/v2/pokemon/4/"
