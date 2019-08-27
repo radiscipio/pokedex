@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import OnePokemon from './Components/OnePokemon'
 import Main from './Components/Main'
 import Header from './Components/Header'

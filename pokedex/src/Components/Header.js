@@ -3,23 +3,12 @@ import { Link, Route, Switch } from 'react-router-dom'
 import Main from './Main'
 import Faves from './Faves'
 
-class Header extends React.Component {
-  state = {
+function Header() {
 
-  }
-
-
-  render() {
-
-    let linkStyles = {
-      margin: '10px'
-    }
     return (
-      <div>
-        <Link style="linkStyles"
-          to ='/Main'>Pokedex</Link>
-        <Link style="linkStyles"
-          to ='/Faves'>My Team</Link>
+      <div className='navbar'>
+        <Link to ='/Main'>Pokedex</Link>
+        <Link to ='/Faves'>My Team</Link>
         <Switch>
           <Route
           path='/Main'
@@ -30,7 +19,7 @@ class Header extends React.Component {
         </Switch>
       </div>
     )
-  }
+
 }
 
 export default Header

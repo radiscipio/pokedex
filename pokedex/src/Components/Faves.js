@@ -2,8 +2,9 @@ import React from 'react'
 
 class Faves extends React.Component {
   constructor(props) {
-    super(props)
+    super(props) 
     this.state = {
+
     }
   }
       render() {

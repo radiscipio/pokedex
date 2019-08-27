@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../App.css'
 import OnePokemon from './OnePokemon'
+
 
 class Main extends Component  {
   constructor(props) {
@@ -8,8 +10,10 @@ class Main extends Component  {
     this.state = {
       baseUrl: "https://pokeapi.co/api/v2/pokemon?limit=151",
       pokedex: [],
+      myTeam: [],
       currentPokemon: null,
-      isShowingMore: false
+      isShowingMore: false,
+      species: null
     }
   }
 
@@ -34,9 +38,9 @@ class Main extends Component  {
 
       let pokeSpecies = await axios (pokeData.data.species.url)
       this.setState(prevState => ({
-        species: pokeSpecies.results
+        species: pokeSpecies.data
       }))
-      console.log(pokeSpecies)
+
   }
 
   render() {
@@ -50,41 +54,18 @@ class Main extends Component  {
     )}
   )
 
-  let container = {
-    display: 'flex',
-    justifyContent: 'space-between'
-  }
-  let leftScreen = {
-    display: 'flex',
-    marginLeft: '100px'
-  }
-
-  let pokeNames = {
-    flexDirection: 'column',
-    border: '1px solid black',
-    padding: '20px',
-    overflowY: 'scroll',
-    height: '85vh'
-  }
-
-  let onePokemonStyle = {
-    position: 'fixed',
-    right: '150px',
-    top: '30px',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: '10px'
-  }
 
    return(
     <>
-      <div style={container}>
-        <div style={leftScreen}>
-          <h2 style={pokeNames}>{pokemon}</h2>
+      <div className='container'>
+        <div className='leftScreen'>
+          <h2 className='pokemonNames'>{pokemon}</h2>
         </div>
-        <div style={onePokemonStyle}>
+        <div>
           <OnePokemon
-            currentPokemon={this.state.currentPokemon}/>
+            currentPokemon={this.state.currentPokemon}
+            species={this.state.species}
+            />
         </div>
       </div>
     </>
