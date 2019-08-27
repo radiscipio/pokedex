@@ -4,6 +4,7 @@ import Main from './Components/Main'
 import Header from './Components/Header'
 import { Link, Route, Switch } from 'react-router-dom'
 import Faves from './Components/Faves'
+import Footer from './Components/Footer'
 
 class App extends Component  {
   constructor(props) {
@@ -17,16 +18,16 @@ class App extends Component  {
 
     return(
      <React.Fragment>
-      <div>
-       </div>
+      <div className='appStyle'>
        <div styles="routeStyles">
-         <Link to ='/Main'>Pokedex</Link>
-         <Link to ='/Faves'>My Team</Link>
+       <Header />
          <Switch>
            <Route path='/Main' component={Main} />
            <Route path='/Faves' component={Faves} />
          </Switch>
-       </div>
+          <Footer />
+        </div>
+      </div>
      </React.Fragment>
     )
   }

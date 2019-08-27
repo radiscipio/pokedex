@@ -9,20 +9,20 @@ function OnePokemon(props) {
     const {genera} = props.species
 
     return (
-      <React.Fragment className='onePokemon'>
-          <div>
-            <img src={sprites.front_default} />
-            <img src={sprites.front_shiny} />
-            <h3>{name}</h3>
-          </div>
-          <div>
-            <h3>Height: {height}</h3>
-            <h3>Weight: {weight}</h3>
-            <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
-            <h3>{genera[2].genus}</h3>
-          </div>
+      <div className='onePokemon'>
+        <div className='sprite-and-name'>
+          <img src={sprites.front_default} />
+          <img src={sprites.front_shiny} />
+          <h3>{name}</h3>
+        </div>
+        <div>
+          <h3>Height: {height}</h3>
+          <h3>Weight: {weight}</h3>
+          <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
+          <h3>{genera[2].genus}</h3>
           <button>Add to Team</button>
-      </React.Fragment>
+        </div>
+      </div>
       )
   } else {
     return (

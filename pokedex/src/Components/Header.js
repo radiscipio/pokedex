@@ -8,15 +8,10 @@ function Header() {
     return (
       <div className='navbar'>
         <Link to ='/Main'>Pokedex</Link>
+        <img
+          className="logo"
+          src={require("../pokemon-logo.png")} />
         <Link to ='/Faves'>My Team</Link>
-        <Switch>
-          <Route
-          path='/Main'
-          component={Main} />
-          <Route
-          path='/Faves'
-          component={Faves} />
-        </Switch>
       </div>
     )
 

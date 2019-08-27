@@ -1,4 +1,23 @@
+.appStyle {
+background-image: url('https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg');
+background-size: cover;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  background-color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.logo {
+
+  height: 90px;
+  width: 260px;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -6,30 +25,50 @@
 
 .leftScreen {
   display: flex;
-  margin-left: 150px;
+  margin-left: 100px;
+}
+
+.name {
+  border: 3px solid black;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 3px;
+  padding-left: 60px;
+  background-color: white;
+}
+
+.pokeball {
+  padding: 3px 25px 0px 0px;
+  width: 20px;
+  height: 20px;
 }
 
 .pokemonNames {
-  border: 1px solid black;
   flex-direction: column;
   padding: 20px;
   overflow-Y: scroll;
-  height: 85vh;
-  width: 50vh;
-  text-align: center;
+  height: 70vh;
+  width: 60vh;
+  margin: 0 auto;
 }
 
 .onePokemon {
-  position: fixed;
-  right: 150px;
-  top: 30px;
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   padding: 10px;
-  border: 1px solid black;
+  margin-right: 40px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
+.sprite-and-name {
+  padding-right: 20px;
+  text-align: center;
+}
+
+
+.footer {
+  margin: 0;
+  background-color: white;
 }
