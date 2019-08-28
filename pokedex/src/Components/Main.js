@@ -22,10 +22,18 @@ class Main extends React.Component  {
     this.setState(prevState => ({
       pokedex: data.data.results
     }))
+    return data.data.results
   }
 
-  componentDidMount() {
-    this.getAllPokes()
+  async componentDidMount() {
+    const pokemen = await this.getAllPokes()
+    const teamNames = JSON.parse(localStorage.getItem('team'));
+    if (teamNames) {
+      const team = teamNames.map(name => pokemen.find(pokemon => pokemon.name === name))
+      this.setState({
+        myTeam: team
+      })
+    }
   }
 
   handleClick = async (pokeUrl) => {
@@ -38,8 +46,22 @@ class Main extends React.Component  {
       this.setState(prevState => ({
         species: pokeSpecies.data
       }))
-
   }
+
+    addToTeam = (name) => {
+      const pokemon = this.state.pokedex.find(pokemon => pokemon.name === name)
+      this.setState(prevState => ({
+        myTeam: [...prevState.myTeam, pokemon]
+      }))
+    }
+
+    removeFromTeam = (index) => {
+      this.setState((prevState) => ({
+        myTeam:
+          prevState.myTeam.filter((d,i) =>
+            i !== index)
+      }))
+    }
 
 
   render() {
@@ -67,6 +89,7 @@ class Main extends React.Component  {
         </div>
         <div>
           <OnePokemon
+            addToTeam={this.addToTeam}
             currentPokemon={this.state.currentPokemon}
             species={this.state.species}
             />
