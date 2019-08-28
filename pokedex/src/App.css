@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gayathri|Source+Sans+Pro&display=swap');
+
+body {
+  margin: 0;
+}
+
+div::first-letter {
+  text-transform: uppercase;
+}
 
 a {
   text-decoration: none;
 }
+
 button {
   cursor: pointer;
 }
@@ -50,6 +59,7 @@ background-size: cover;
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
   display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
   justify-content: space-between;
   margin: 3px;
   padding-left: 60px;
@@ -72,12 +82,18 @@ background-size: cover;
   cursor: pointer;
 }
 
+
 .onePokemon {
   display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
   justify-content: flex-end;
   flex-direction: column;
   padding: 10px;
   margin-right: 40px;
+}
+
+.apiName::first-letter {
+  text-transform: uppercase;
 }
 
 .sprite-and-name {
@@ -86,7 +102,6 @@ background-size: cover;
 }
 
 .myTeam {
-  height: 70vh;
   text-align: center;
 }
 

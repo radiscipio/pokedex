@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import '../App.css'
 import OnePokemon from './OnePokemon'
+import Faves from './Faves'
+
+import { Redirect } from 'react-router-dom'
 
 class Main extends React.Component  {
   constructor(props) {
@@ -12,7 +15,8 @@ class Main extends React.Component  {
       myTeam: [],
       currentPokemon: null,
       isShowingMore: false,
-      species: null
+      species: null,
+      clicked:false
     }
   }
 
@@ -22,18 +26,10 @@ class Main extends React.Component  {
     this.setState(prevState => ({
       pokedex: data.data.results
     }))
-    return data.data.results
   }
 
-  async componentDidMount() {
-    const pokemen = await this.getAllPokes()
-    const teamNames = JSON.parse(localStorage.getItem('team'));
-    if (teamNames) {
-      const team = teamNames.map(name => pokemen.find(pokemon => pokemon.name === name))
-      this.setState({
-        myTeam: team
-      })
-    }
+  componentDidMount() {
+    this.getAllPokes()
   }
 
   handleClick = async (pokeUrl) => {
@@ -48,11 +44,22 @@ class Main extends React.Component  {
       }))
   }
 
-    addToTeam = (name) => {
-      const pokemon = this.state.pokedex.find(pokemon => pokemon.name === name)
-      this.setState(prevState => ({
-        myTeam: [...prevState.myTeam, pokemon]
-      }))
+    addToTeam = (event) => {
+      event.preventDefault()
+      console.log(event.target.name);
+      this.setState({
+        clicked:true
+
+      })
+      this.state.myTeam.push(this.state.currentPokemon)
+      console.log(this.state.currentPokemon)
+
+
+
+      // this.setState(prevState => ({
+      //   myTeam: [...prevState.myTeam, pokemon]
+      // }))
+
     }
 
     removeFromTeam = (index) => {
@@ -65,6 +72,14 @@ class Main extends React.Component  {
 
 
   render() {
+    console.log(this.state)
+    let faves = this.props.favesClicked === true &&
+      <Redirect to={{
+        pathname: './Faves',
+        state: {favs:this.state.myTeam}
+      }}/>
+
+
     let pokemon = this.state.pokedex.map( (d,i) => {
       return (
           <div className='name'
@@ -83,9 +98,11 @@ class Main extends React.Component  {
 
    return(
     <>
+
       <div className='container'>
         <div className='leftScreen'>
           <h2 className='pokemonNames'>{pokemon}</h2>
+
         </div>
         <div>
           <OnePokemon
@@ -94,6 +111,7 @@ class Main extends React.Component  {
             species={this.state.species}
             />
         </div>
+        {faves}
       </div>
     </>
    )
