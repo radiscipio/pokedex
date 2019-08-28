@@ -13,16 +13,28 @@ function OnePokemon(props) {
         <div className='sprite-and-name'>
           <img src={sprites.front_default} />
           <img src={sprites.front_shiny} />
-          <h3 className='apiName'>{name}</h3>
+          <h3>{name}</h3>
         </div>
         <div>
           <h3>Height: {height}</h3>
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
           <h3>{genera[2].genus}</h3>
-          <button
-            onClick={props.addToTeam}
-          >Add to Team</button>
+          {/* <button
+            onClick={(e) => {
+              const team = JSON.parse(localStorage.getItem('team'));
+              props.addToTeam(name)
+              if (team.length < 6){
+                if(team) {
+                  localStorage.setItem('team', JSON.stringify([...team, name]))
+                } else {
+                  localStorage.setItem('team', JSON.stringify([name]))
+                }
+              } else {
+                alert('Sup dumb bitch you got no space')
+              }
+            }}
+          >Add to Team</button> */}
         </div>
       </div>
       )

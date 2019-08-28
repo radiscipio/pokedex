@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import '../App.css'
 import OnePokemon from './OnePokemon'
-import Faves from './Faves'
-
-import { Redirect } from 'react-router-dom'
 
 class Main extends React.Component  {
   constructor(props) {
@@ -15,8 +12,7 @@ class Main extends React.Component  {
       myTeam: [],
       currentPokemon: null,
       isShowingMore: false,
-      species: null,
-      clicked:false
+      species: null
     }
   }
 
@@ -26,40 +22,37 @@ class Main extends React.Component  {
     this.setState(prevState => ({
       pokedex: data.data.results
     }))
+    return data.data.results
   }
 
-  componentDidMount() {
-    this.getAllPokes()
+  async componentDidMount() {
+    const pokemen = await this.getAllPokes()
+    const teamNames = JSON.parse(localStorage.getItem('team'));
+    if (teamNames) {
+      const team = teamNames.map(name => pokemen.find(pokemon => pokemon.name === name))
+      this.setState({
+        myTeam: team
+      })
+    }
   }
 
   handleClick = async (pokeUrl) => {
-      let pokeData = await axios(pokeUrl)
-        this.setState({
-          currentPokemon: pokeData.data
-        })
+    let pokeData = await axios(pokeUrl)
+      this.setState({
+        currentPokemon: pokeData.data
+      })
 
-      let pokeSpecies = await axios (pokeData.data.species.url)
-      this.setState(prevState => ({
-        species: pokeSpecies.data
-      }))
+    let pokeSpecies = await axios (pokeData.data.species.url)
+    this.setState(prevState => ({
+      species: pokeSpecies.data
+    }))
   }
 
-    addToTeam = (event) => {
-      event.preventDefault()
-      console.log(event.target.name);
-      this.setState({
-        clicked:true
-
-      })
-      this.state.myTeam.push(this.state.currentPokemon)
-      console.log(this.state.currentPokemon)
-
-
-
-      // this.setState(prevState => ({
-      //   myTeam: [...prevState.myTeam, pokemon]
-      // }))
-
+    addToTeam = (name) => {
+      const pokemon = this.state.pokedex.find(pokemon => pokemon.name === name)
+      this.setState(prevState => ({
+        myTeam: [...prevState.myTeam, pokemon]
+      }))
     }
 
     removeFromTeam = (index) => {
@@ -70,39 +63,27 @@ class Main extends React.Component  {
       }))
     }
 
-
   render() {
-    console.log(this.state)
-    let faves = this.props.favesClicked === true &&
-      <Redirect to={{
-        pathname: './Faves',
-        state: {favs:this.state.myTeam}
-      }}/>
-
-
     let pokemon = this.state.pokedex.map( (d,i) => {
       return (
-          <div className='name'
-          onClick={() => this.handleClick(d.url)}>
-            <div key={i}>
-              {d.name}
-            </div>
-            <img
-              className="pokeball"
-              src={require("../closed-pokeball-color.png")} />
+        <div className='name'
+        onClick={() => this.handleClick(d.url)}>
+          <div key={i}>
+            {d.name}
           </div>
-
-    )}
+          <img
+            className="pokeball"
+            src={require("../closed-pokeball-color.png")} />
+        </div>
+      )
+    }
   )
-
 
    return(
     <>
-
       <div className='container'>
         <div className='leftScreen'>
           <h2 className='pokemonNames'>{pokemon}</h2>
-
         </div>
         <div>
           <OnePokemon
@@ -111,7 +92,6 @@ class Main extends React.Component  {
             species={this.state.species}
             />
         </div>
-        {faves}
       </div>
     </>
    )
