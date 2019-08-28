@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import '../App.css'
 import OnePokemon from './OnePokemon'
-import Konami from 'react-konami-code'
 
 class Main extends React.Component  {
   constructor(props) {
@@ -23,7 +22,6 @@ class Main extends React.Component  {
     this.setState(prevState => ({
       pokedex: data.data.results
     }))
-    console.log('pokemon', this.state.pokedex)
   }
 
   componentDidMount() {
@@ -43,24 +41,20 @@ class Main extends React.Component  {
 
   }
 
-  // Konami Code Here
-  //
-  // easterEgg = () => {
-  //   alert('This is Konami Code')
-  // }
 
   render() {
     let pokemon = this.state.pokedex.map( (d,i) => {
       return (
-        <div className='name'
-        onClick={() => this.handleClick(d.url)}>
-          <div key={i}>
-            {d.name}
+          <div className='name'
+          onClick={() => this.handleClick(d.url)}>
+            <div key={i}>
+              {d.name}
+            </div>
+            <img
+              className="pokeball"
+              src={require("../closed-pokeball-color.png")} />
           </div>
-          <img
-            className="pokeball"
-            src={require("../closed-pokeball-color.png")} />
-        </div>
+
     )}
   )
 

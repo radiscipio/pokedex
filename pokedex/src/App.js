@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import OnePokemon from './Components/OnePokemon'
-import Main from './Components/Main'
-import Header from './Components/Header'
+import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
+import Konami from 'react-konami-code'
+import Header from './Components/Header'
 import Faves from './Components/Faves'
 import Footer from './Components/Footer'
+import Main from './Components/Main'
+import OnePokemon from './Components/OnePokemon'
+
 
 class App extends Component  {
   constructor(props) {
@@ -18,6 +20,7 @@ class App extends Component  {
 
     return(
      <React.Fragment>
+
       <div className='appStyle'>
        <div styles="routeStyles">
        <Header />

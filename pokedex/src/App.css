@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+a {
+  text-decoration: none;
+}
+
 .appStyle {
 background-image: url('https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg');
 background-size: cover;
@@ -5,12 +11,19 @@ background-size: cover;
 
 .navbar {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: baseline;
   font-size: 25px;
+  padding-bottom: 5px;
+  font-family: 'Gayathri', sans-serif;
   background-color: white;
-  padding: 10px;
-  text-decoration: none;
+  border-bottom: 5px solid black;
+}
+
+.pikachu {
+  position: absolute;
+  left: 0;
+  height: 100px;
 }
 
 .logo {
@@ -71,4 +84,6 @@ background-size: cover;
 .footer {
   margin: 0;
   background-color: white;
+  border-top: 5px solid black;
+  text-align: center;
 }
