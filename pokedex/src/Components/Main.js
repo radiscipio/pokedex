@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Redirect, Route } from 'react-router-dom'
 import '../App.css'
+import Konami from 'react-konami-code'
 import OnePokemon from './OnePokemon'
+import MyTeam from './MyTeam'
 
 class Main extends React.Component  {
   constructor(props) {
@@ -12,10 +15,10 @@ class Main extends React.Component  {
       myTeam: [],
       currentPokemon: null,
       isShowingMore: false,
-      species: null
+      species: null,
     }
   }
-
+ //API call to get Pokémon data
   getAllPokes = async () => {
     let pokeUrl = this.state.baseUrl
     let data = await axios(pokeUrl)
@@ -25,17 +28,18 @@ class Main extends React.Component  {
     return data.data.results
   }
 
+  // Set team in local storage
   async componentDidMount() {
     const pokemen = await this.getAllPokes()
-    const teamNames = JSON.parse(localStorage.getItem('team'));
-    if (teamNames) {
-      const team = teamNames.map(name => pokemen.find(pokemon => pokemon.name === name))
+    const team = JSON.parse(localStorage.getItem('team'));
+    if (team) {
       this.setState({
         myTeam: team
       })
     }
   }
 
+  // API call to get Pokemon info on click
   handleClick = async (pokeUrl) => {
     let pokeData = await axios(pokeUrl)
       this.setState({
@@ -48,19 +52,21 @@ class Main extends React.Component  {
     }))
   }
 
-    addToTeam = (name) => {
-      const pokemon = this.state.pokedex.find(pokemon => pokemon.name === name)
+  // Add to Team Component
+    addToTeam = (pokemon) => {
       this.setState(prevState => ({
         myTeam: [...prevState.myTeam, pokemon]
       }))
     }
 
-    removeFromTeam = (index) => {
+  // Remove from Team Component
+    removeFromTeam = (removePokemon) => {
       this.setState((prevState) => ({
         myTeam:
-          prevState.myTeam.filter((d,i) =>
-            i !== index)
-      }))
+          prevState.myTeam.filter((d) =>
+            d !== removePokemon)
+      }), () => localStorage.setItem('team', JSON.stringify(this.state.myTeam))
+      )
     }
 
   render() {
@@ -79,20 +85,30 @@ class Main extends React.Component  {
     }
   )
 
-   return(
+   return (
     <>
-      <div className='container'>
-        <div className='leftScreen'>
-          <h2 className='pokemonNames'>{pokemon}</h2>
+      <Route exact path='/Main' render={() => (
+        <div className='container'>
+          <div className='leftScreen'>
+            <h2
+            className='pokemonNames'
+            >{pokemon}</h2>
+          </div>
+          <div>
+            <OnePokemon
+              addToTeam={this.addToTeam}
+              currentPokemon={this.state.currentPokemon}
+              species={this.state.species}
+              />
+          </div>
         </div>
-        <div>
-          <OnePokemon
-            addToTeam={this.addToTeam}
-            currentPokemon={this.state.currentPokemon}
-            species={this.state.species}
-            />
-        </div>
-      </div>
+      )}/>
+      <Route path ='/Main/MyTeam' render={() => (
+        <MyTeam
+        myTeam={this.state.myTeam}
+        removeFromTeam={this.removeFromTeam}/>
+      )}
+      />
     </>
    )
   }

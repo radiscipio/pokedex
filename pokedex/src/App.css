@@ -21,9 +21,10 @@ button {
 }
 
 .appStyle {
-  background-image: url('https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg');
+  background: url('https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg') no-repeat;
   background-size: cover;
 }
+
 
 .navbar {
   display: flex;
@@ -71,7 +72,7 @@ button {
 }
 
 .pokeball {
-  padding: 3px 25px 0px 0px;
+  padding: 5px 25px 0px 0px;
   width: 20px;
   height: 20px;
 }
@@ -82,20 +83,25 @@ button {
   overflow-Y: scroll;
   height: 70vh;
   width: 60vh;
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 0;
   cursor: pointer;
+}
+
+.name:hover {
+  background-color: #DEDEDE;
 }
 
 .onePokemon {
   background-color: white;
-  border: 5px solid black;
-  border-top: none;
+  border: 3px solid black;
+  border-radius: 7px;
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
   justify-content: flex-end;
   flex-direction: column;
   padding: 10px;
-  margin-right: 40px;
+  margin: 20px 40px 0px 0px;
 }
 
 .apiName::first-letter {
@@ -107,15 +113,28 @@ button {
   text-align: center;
 }
 
-.about {
+.myTeam {
   height: 75vh;
-  text-align: center;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.teamMember {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 7px;
+  justify-content: center;
+  padding: 30px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
   background-color: white;
   border-top: 5px solid black;
-  margin: 0 auto;
   text-align: center;
 }

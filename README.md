@@ -37,7 +37,8 @@ They're color coded!</br>
 
 - Add in all the other Pokemon
 - Save multiple teams
-- Create data data structure to see all the branches of evolved forms
+- Create data data structure to see all the branches of evolved forms for the Pokemon
+- Add effects to the items when they are active
 
 ## React Component Hierarchy
 [Hierarchy](https://res.cloudinary.com/radiscipio/image/upload/v1566589661/gfyuofjliehxwin4cypd.jpg)
@@ -47,14 +48,14 @@ They're color coded!</br>
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | :--- | :---: |  :---: | :---: | :---: |
-| Header | High | 2 hrs| TBA | TBA |
-| Main | High | 3 hrs | TBA | TBA |
-| Card | High | 4 Hours | TBA | TBA |
-| Styling | High | 6-7 Hours | TBA | TBA |
-| View All | High | 4 Hours | TBA | TBA |
-| Team | Medium | 3 Hours | TBA | TBA |
-| Konami Code | Low | 2 Hours | TBA | TBA |
-| Total: | ---- | 25~ hrs| TBA | TBA |
+| Header | High | 2 Hours | 2 Hours | TBA |
+| Main | High | 3 Hours | 4 Hours | TBA |
+| Card | High | 4 Hours | 2 Hours | TBA |
+| Styling | High | 6-7 Hours | 6 Hours | TBA |
+| View All | High | 4 Hours | 3 Hours | TBA |
+| Team | Medium | 3 Hours | 8 Hours | TBA |
+| Konami Code | Low | 2 Hours | 1 | TBA |
+| Total: | ---- | 25~ Hours| 26 Hours | TBA |
 
 ## Code Snippet
 
@@ -76,4 +77,7 @@ results": [
 
 ## Errors & Resolutions
 
-TBA
+  One of the biggest errors I had was moving the added Pokemon into the My Team page.
+  This was resolved because I had a lot of help from my IA's David Whitlatch and Soleil Solomon. They both helped me figure out the process of changing the state of the component, and saving the data to local storage so I can render it in the correct page.
+
+  Another small error that I had was that when I would click on the My Team link while in the My Team page, it would redirect me to a page that didn't exist. I fixed this by

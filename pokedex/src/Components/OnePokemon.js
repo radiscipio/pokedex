@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css'
 
 function OnePokemon(props) {
 
@@ -23,15 +22,15 @@ function OnePokemon(props) {
           <button
             onClick={(e) => {
               const team = JSON.parse(localStorage.getItem('team'));
-              props.addToTeam(name)
               if (!team || team.length < 6){
+                props.addToTeam({name,image: sprites.front_default})
                 if(team) {
-                  localStorage.setItem('team', JSON.stringify([...team, name]))
+                  localStorage.setItem('team', JSON.stringify([...team, {name,image: sprites.front_default}]))
                 } else {
-                  localStorage.setItem('team', JSON.stringify([name]))
+                  localStorage.setItem('team', JSON.stringify([{name,image: sprites.front_default}]))
                 }
               } else {
-                alert('Sup dumb bitch you got no space')
+                alert(`You can only have six Pokémon`)
               }
             }}
           >Add to Team</button>

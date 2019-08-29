@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 function Header() {
 
@@ -11,7 +11,7 @@ function Header() {
       <img
         className="logo"
         src={require("../pokemon-logo.png")} />
-      <Link to ='/About'>The TCG</Link>
+      <Link to='/Main/MyTeam'>My Team</Link>
     </div>
   )
 }
