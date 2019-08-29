@@ -17,6 +17,7 @@ class App extends Component  {
        <Header />
          <Switch>
           <Route path='/' component={Main} />
+          {/* Redirect the onload page to main (there's no home page)*/}
           <Redirect from='/' to='/Main' />
          </Switch>
           <Footer />

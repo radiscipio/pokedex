@@ -18,7 +18,7 @@ class Main extends React.Component  {
       species: null,
     }
   }
- //API call to get Pokémon data
+ // API call to get Pokémon data
   getAllPokes = async () => {
     let pokeUrl = this.state.baseUrl
     let data = await axios(pokeUrl)
@@ -28,7 +28,7 @@ class Main extends React.Component  {
     return data.data.results
   }
 
-  // Set team in local storage
+  // SET team in local storage
   async componentDidMount() {
     const pokemen = await this.getAllPokes()
     const team = JSON.parse(localStorage.getItem('team'));
@@ -52,14 +52,14 @@ class Main extends React.Component  {
     }))
   }
 
-  // Add to Team Component
+  // ADD to Team Component
     addToTeam = (pokemon) => {
       this.setState(prevState => ({
         myTeam: [...prevState.myTeam, pokemon]
       }))
     }
 
-  // Remove from Team Component
+  // REMOVE from Team Component
     removeFromTeam = (removePokemon) => {
       this.setState((prevState) => ({
         myTeam:

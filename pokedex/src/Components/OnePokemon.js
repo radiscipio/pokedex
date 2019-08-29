@@ -4,6 +4,7 @@ function OnePokemon(props) {
 
 
   if (props.currentPokemon && props.species) {
+    // Get the specific info from the API
     const {name, sprites, height, weight, types} = props.currentPokemon;
     const {genera} = props.species
 
@@ -20,6 +21,10 @@ function OnePokemon(props) {
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
           <h3>{genera[2].genus}</h3>
           <button
+          {/* ONCLICK
+                GRAB the data
+                SET it into local local storage,
+                ALERT if user tries to add more than six pokemon */}
             onClick={(e) => {
               const team = JSON.parse(localStorage.getItem('team'));
               if (!team || team.length < 6){

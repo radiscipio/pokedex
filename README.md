@@ -48,14 +48,15 @@ They're color coded!</br>
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | :--- | :---: |  :---: | :---: | :---: |
-| Header | High | 2 Hours | 2 Hours | TBA |
-| Main | High | 3 Hours | 4 Hours | TBA |
-| Card | High | 4 Hours | 2 Hours | TBA |
-| Styling | High | 6-7 Hours | 6 Hours | TBA |
-| View All | High | 4 Hours | 3 Hours | TBA |
-| Team | Medium | 3 Hours | 8 Hours | TBA |
-| Konami Code | Low | 2 Hours | 1 | TBA |
-| Total: | ---- | 25~ Hours| 26 Hours | TBA |
+|Planning| High | 6 Hours | 7 Hours |
+| Header | High | 2 Hours | 2 Hours |
+| Main | High | 3 Hours | 4 Hours |
+| Card | High | 4 Hours | 2 Hours |
+| Styling | High | 6-7 Hours | 7-8 Hours |
+| View All | High | 4 Hours | 3 Hours |
+| Team | Medium | 3 Hours | 8 Hours |
+| Konami Code | Low | 2 Hours | 1 |
+| Total: | ---- | 27~ Hours| 33-34 Hours |
 
 ## Code Snippet
 
@@ -80,4 +81,6 @@ results": [
   One of the biggest errors I had was moving the added Pokemon into the My Team page.
   This was resolved because I had a lot of help from my IA's David Whitlatch and Soleil Solomon. They both helped me figure out the process of changing the state of the component, and saving the data to local storage so I can render it in the correct page.
 
-  Another small error that I had was that when I would click on the My Team link while in the My Team page, it would redirect me to a page that didn't exist. I fixed this by
+  A small error that I had was that when I would click on the My Team link while in the My Team page, it would redirect me to a page that didn't exist. I fixed this by
+
+  I wanted to add in a secret easter egg for people that entered in a certain set of keyboard keys, but I wasn't able to figure it out, I do want to come back to that eventually

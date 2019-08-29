@@ -1,7 +1,7 @@
 import React from 'react'
 
 function MyTeam(props) {
-
+  // GRAB the info from the state and set it into the "My Team" component
   const {name, sprites, height, weight, types} = props.myTeam;
 
   return (
@@ -10,12 +10,12 @@ function MyTeam(props) {
         <img src={pokemon.image} />
         <h3>{pokemon.name}</h3>
         <button
+        {/* REMOVE the Pokemon from the team if wanted */}
           onClick={(e) => {
             const team = JSON.parse(localStorage.getItem('team'));
             if (team){
               console.log(props)
               props.removeFromTeam(pokemon)
-              
             }
           }}
         >Remove</button>
