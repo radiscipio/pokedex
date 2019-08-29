@@ -20,11 +20,11 @@ function OnePokemon(props) {
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
           <h3>{genera[2].genus}</h3>
-          {/* <button
+          <button
             onClick={(e) => {
               const team = JSON.parse(localStorage.getItem('team'));
               props.addToTeam(name)
-              if (team.length < 6){
+              if (!team || team.length < 6){
                 if(team) {
                   localStorage.setItem('team', JSON.stringify([...team, name]))
                 } else {
@@ -34,7 +34,7 @@ function OnePokemon(props) {
                 alert('Sup dumb bitch you got no space')
               }
             }}
-          >Add to Team</button> */}
+          >Add to Team</button>
         </div>
       </div>
       )

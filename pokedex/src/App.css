@@ -4,8 +4,12 @@ body {
   margin: 0;
 }
 
+h3::first-letter {
+  text-transform: capitalize;
+}
+
 div::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 a {
@@ -82,8 +86,10 @@ button {
   cursor: pointer;
 }
 
-
 .onePokemon {
+  background-color: white;
+  border: 5px solid black;
+  border-top: none;
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
   justify-content: flex-end;
@@ -110,5 +116,6 @@ button {
 .footer {
   background-color: white;
   border-top: 5px solid black;
+  margin: 0 auto;
   text-align: center;
 }

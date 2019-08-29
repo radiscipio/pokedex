@@ -7,7 +7,7 @@ function Header() {
     <div className='navbar'>
     <img className='pikachu'
       src={require("../pikachu.gif")} />
-      <Link to ='/Main'>Pokedex</Link>
+      <Link to ='/Main'>Pokédex</Link>
       <img
         className="logo"
         src={require("../pokemon-logo.png")} />
