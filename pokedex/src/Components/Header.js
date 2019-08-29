@@ -7,11 +7,11 @@ function Header() {
     <div className='navbar'>
     <img className='pikachu'
       src={require("../pikachu.gif")} />
-      <Link to ='/Main'>Pokédex</Link>
+      <Link to ='/'>Pokédex</Link>
       <img
         className="logo"
         src={require("../pokemon-logo.png")} />
-      <Link to='/Main/MyTeam'>My Team</Link>
+      <Link to='/MyTeam'>My Team</Link>
     </div>
   )
 }

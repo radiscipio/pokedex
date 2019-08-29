@@ -16,7 +16,7 @@ class App extends Component  {
        <div styles="routeStyles">
        <Header />
          <Switch>
-          <Route path='/Main' component={Main} />
+          <Route path='/' component={Main} />
           <Redirect from='/' to='/Main' />
          </Switch>
           <Footer />

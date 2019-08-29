@@ -87,7 +87,7 @@ class Main extends React.Component  {
 
    return (
     <>
-      <Route exact path='/Main' render={() => (
+      <Route exact path='/' render={() => (
         <div className='container'>
           <div className='leftScreen'>
             <h2
@@ -103,7 +103,7 @@ class Main extends React.Component  {
           </div>
         </div>
       )}/>
-      <Route path ='/Main/MyTeam' render={() => (
+      <Route path ='/MyTeam' render={() => (
         <MyTeam
         myTeam={this.state.myTeam}
         removeFromTeam={this.removeFromTeam}/>
