@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect, Route } from 'react-router-dom'
 import '../App.css'
-import Konami from 'react-konami-code'
 import OnePokemon from './OnePokemon'
 import MyTeam from './MyTeam'
 

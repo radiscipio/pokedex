@@ -20,11 +20,11 @@ function OnePokemon(props) {
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
           <h3>{genera[2].genus}</h3>
-          <button
           {/* ONCLICK
                 GRAB the data
                 SET it into local local storage,
                 ALERT if user tries to add more than six pokemon */}
+          <button
             onClick={(e) => {
               const team = JSON.parse(localStorage.getItem('team'));
               if (!team || team.length < 6){

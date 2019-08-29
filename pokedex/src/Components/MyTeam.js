@@ -9,8 +9,8 @@ function MyTeam(props) {
       <div className='teamMember'>
         <img src={pokemon.image} />
         <h3>{pokemon.name}</h3>
+        {/* REMOVE the Pokemon from the team if button is clicked */}
         <button
-        {/* REMOVE the Pokemon from the team if wanted */}
           onClick={(e) => {
             const team = JSON.parse(localStorage.getItem('team'));
             if (team){
