@@ -5,7 +5,7 @@ import '../App.css'
 import OnePokemon from './OnePokemon'
 import MyTeam from './MyTeam'
 
-class Main extends React.Component  {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ class Main extends React.Component  {
       species: null,
     }
   }
- // API call to get Pokémon data
+  // API call to get Pokémon data
   getAllPokes = async () => {
     let pokeUrl = this.state.baseUrl
     let data = await axios(pokeUrl)
@@ -41,38 +41,38 @@ class Main extends React.Component  {
   // API call to get Pokemon info on click
   handleClick = async (pokeUrl) => {
     let pokeData = await axios(pokeUrl)
-      this.setState({
-        currentPokemon: pokeData.data
-      })
+    this.setState({
+      currentPokemon: pokeData.data
+    })
 
-    let pokeSpecies = await axios (pokeData.data.species.url)
+    let pokeSpecies = await axios(pokeData.data.species.url)
     this.setState(prevState => ({
       species: pokeSpecies.data
     }))
   }
 
   // ADD to Team Component
-    addToTeam = (pokemon) => {
-      this.setState(prevState => ({
-        myTeam: [...prevState.myTeam, pokemon]
-      }))
-    }
+  addToTeam = (pokemon) => {
+    this.setState(prevState => ({
+      myTeam: [...prevState.myTeam, pokemon]
+    }))
+  }
 
   // REMOVE from Team Component
-    removeFromTeam = (removePokemon) => {
-      this.setState((prevState) => ({
-        myTeam:
-          prevState.myTeam.filter((d) =>
-            d !== removePokemon)
-      }), () => localStorage.setItem('team', JSON.stringify(this.state.myTeam))
-      )
-    }
+  removeFromTeam = (removePokemon) => {
+    this.setState((prevState) => ({
+      myTeam:
+        prevState.myTeam.filter((d) =>
+          d !== removePokemon)
+    }), () => localStorage.setItem('team', JSON.stringify(this.state.myTeam))
+    )
+  }
 
   render() {
-    let pokemon = this.state.pokedex.map( (d,i) => {
+    let pokemon = this.state.pokedex.map((d, i) => {
       return (
         <div className='name'
-        onClick={() => this.handleClick(d.url)}>
+          onClick={() => this.handleClick(d.url)}>
           <div key={i}>
             {d.name}
           </div>
@@ -82,34 +82,34 @@ class Main extends React.Component  {
         </div>
       )
     }
-  )
+    )
 
-   return (
-    <>
-      <Route exact path='/' render={() => (
-        <div className='container'>
-          <div className='leftScreen'>
-            <h2
-            className='pokemonNames'
-            >{pokemon}</h2>
-          </div>
-          <div>
-            <OnePokemon
-              addToTeam={this.addToTeam}
-              currentPokemon={this.state.currentPokemon}
-              species={this.state.species}
+    return (
+      <>
+        <Route exact path='/' render={() => (
+          <div className='container'>
+            <div className='leftScreen'>
+              <h2
+                className='pokemonNames'
+              >{pokemon}</h2>
+            </div>
+            <div>
+              <OnePokemon
+                addToTeam={this.addToTeam}
+                currentPokemon={this.state.currentPokemon}
+                species={this.state.species}
               />
+            </div>
           </div>
-        </div>
-      )}/>
-      <Route path ='/MyTeam' render={() => (
-        <MyTeam
-        myTeam={this.state.myTeam}
-        removeFromTeam={this.removeFromTeam}/>
-      )}
-      />
-    </>
-   )
+        )} />
+        <Route path='/MyTeam' render={() => (
+          <MyTeam
+            myTeam={this.state.myTeam}
+            removeFromTeam={this.removeFromTeam} />
+        )}
+        />
+      </>
+    )
   }
 }
 
