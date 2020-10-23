@@ -19,7 +19,7 @@ function OnePokemon(props) {
           <h3>Height: {height}</h3>
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
-          <h3>{genera[2].genus}</h3>
+          <h3>{genera[7].genus}</h3>
           {/* ONCLICK
                 GRAB the data
                 SET it into local local storage,
@@ -35,7 +35,7 @@ function OnePokemon(props) {
                   localStorage.setItem('team', JSON.stringify([{name,image: sprites.front_default}]))
                 }
               } else {
-                alert(`You can only have six Pokémon`)
+                alert(`You can only have six Pokémon on your team!`)
               }
             }}
           >Add to Team</button>
