@@ -19,7 +19,7 @@ function OnePokemon(props) {
           <h3>Height: {height}</h3>
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>
-          <h3>{genera[7].genus}</h3>
+          <h3>The {genera[7].genus}</h3>
           {/* ONCLICK
                 GRAB the data
                 SET it into local local storage,
