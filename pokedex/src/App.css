@@ -100,8 +100,8 @@ button {
   font-family: "Source Sans Pro", sans-serif;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 10px;
-  margin: 20px 40px 0px 0px;
+  padding: 2em;
+  margin: 4em 4em 1em 1em;
 }
 
 .apiName::first-letter {
@@ -111,6 +111,11 @@ button {
 .sprite-and-name {
   padding-right: 20px;
   text-align: center;
+}
+.sprite-and-name img {
+  height: 150px;
+  width: 150px;
+
 }
 
 .myTeam {
