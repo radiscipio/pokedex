@@ -77,8 +77,10 @@ class Main extends React.Component {
             {d.name}
           </div>
           <img
+            alt = "pokeball favicon"
             className="pokeball"
-            src={require("../closed-pokeball-color.png")} />
+            src={require("../closed-pokeball-color.png")} 
+          />
         </div>
       )
     }

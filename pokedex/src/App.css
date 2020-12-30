@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gayathri|Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Gayathri|Source+Sans+Pro&display=swap");
 
 body {
   margin: 0;
@@ -21,10 +21,10 @@ button {
 }
 
 .appStyle {
-  background: url('https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg') no-repeat;
+  background: url("https://res.cloudinary.com/radiscipio/image/upload/v1566938615/ldk7yfspcamsinxsvd1r.jpg")
+    no-repeat;
   background-size: cover;
 }
-
 
 .navbar {
   display: flex;
@@ -32,7 +32,7 @@ button {
   align-items: baseline;
   font-size: 25px;
   padding-bottom: 5px;
-  font-family: 'Gayathri', sans-serif;
+  font-family: "Gayathri", sans-serif;
   background-color: white;
   border-bottom: 5px solid black;
 }
@@ -64,7 +64,7 @@ button {
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
   display: flex;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   justify-content: space-between;
   margin: 3px;
   padding-left: 60px;
@@ -80,7 +80,7 @@ button {
 .pokemonNames {
   flex-direction: column;
   padding: 20px;
-  overflow-Y: scroll;
+  overflow-y: scroll;
   height: 70vh;
   width: 60vh;
   margin: auto;
@@ -89,7 +89,7 @@ button {
 }
 
 .name:hover {
-  background-color: #DEDEDE;
+  background-color: #dedede;
 }
 
 .onePokemon {
@@ -97,7 +97,7 @@ button {
   border: 3px solid black;
   border-radius: 7px;
   display: flex;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   justify-content: flex-end;
   flex-direction: column;
   padding: 10px;
@@ -138,3 +138,5 @@ button {
   border-top: 5px solid black;
   text-align: center;
 }
+
+
