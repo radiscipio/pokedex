@@ -7,7 +7,7 @@ function MyTeam(props) {
   return (
     <div className='myTeam'>{props.myTeam.map(pokemon => (
       <div className='teamMember'>
-        <img src={pokemon.image} />
+        <img src={pokemon.image}  alt="pokemon"/>
         <h3>{pokemon.name}</h3>
         {/* REMOVE the Pokemon from the team if button is clicked */}
         <button

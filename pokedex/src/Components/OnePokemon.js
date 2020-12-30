@@ -11,8 +11,8 @@ function OnePokemon(props) {
     return (
       <div className='onePokemon'>
         <div className='sprite-and-name'>
-          <img src={sprites.front_default} />
-          <img src={sprites.front_shiny} />
+          <img src={sprites.front_default} alt="pokemon-normal"/>
+          <img src={sprites.front_shiny} alt="pokemon-shiny"/>
           <h3>{name}</h3>
         </div>
         <div>
