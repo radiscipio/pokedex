@@ -125,10 +125,16 @@ button {
   padding: .25em;
 }
 
+.team-container {
+  height: 80vh;
+  width: 100%;
+  
+}
+
 .myTeam {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
+  gap: 1em;
   margin: 2em;
 }
 
@@ -138,6 +144,13 @@ button {
   border-radius: 7px;
   margin: 0 auto;
   padding: 2.5em;
+}
+
+.teamMember button {
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: "Gayathri", sans-serif;
+  padding: .25em;
 }
 
 .footer {
@@ -166,6 +179,30 @@ button {
   }
 
   .pikachu {
+    display: none;
+  }
+
+  .myTeam {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5em;
+    margin: 2em;
+  }
+
+  .teamMember {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0em 0em 1em 0em;
+  }
+
+  .teamMember img {
+    height: 45%;
+    width: 45%;
+  }
+
+  .footer {
     display: none;
   }
 
@@ -200,5 +237,10 @@ button {
 
   .pokemon-info h3 {
     margin-top: 0px;
+  }
+
+  .teamMember img {
+    height: 60%;
+    width: 60%;
   }
 }
