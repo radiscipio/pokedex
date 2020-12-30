@@ -15,7 +15,7 @@ function OnePokemon(props) {
           <img src={sprites.front_shiny} alt="pokemon-shiny"/>
           <h3>{name}</h3>
         </div>
-        <div>
+        <div className="pokemon-info">
           <h3>Height: {height}</h3>
           <h3>Weight: {weight}</h3>
           <h3>Type: {types.map(type => <span>{type.type.name} </span>)}</h3>

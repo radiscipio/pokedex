@@ -30,7 +30,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  font-size: 25px;
+  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
   padding-bottom: 5px;
   font-family: "Gayathri", sans-serif;
   background-color: white;
@@ -116,7 +116,13 @@ button {
 .sprite-and-name img {
   height: 150px;
   width: 150px;
+}
 
+.pokemon-info button {
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: "Gayathri", sans-serif;
+  padding: .25em;
 }
 
 .myTeam {
@@ -167,13 +173,11 @@ button {
   .pikachu {
     display: none;
   }
-
 }
 
 /* Cellphone */
 
 @media (max-width: 600px) {
-
   .container {
     border-bottom: 3px solid black;
   }
@@ -184,7 +188,7 @@ button {
 
   .pokemonNames {
     height: 35vh;
-    width: 100%;    
+    width: 100%;
   }
 
   .onePokemon {
@@ -196,6 +200,9 @@ button {
   .sprite-and-name img {
     height: 100px;
     width: 100px;
-  
+  }
+
+  .pokemon-info h3 {
+    margin-top: 0px;
   }
 }
