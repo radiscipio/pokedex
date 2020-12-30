@@ -44,8 +44,8 @@ button {
 }
 
 .logo {
-  height: 20%;
-  width: 30%;
+  height: 8%;
+  width: 18%;
 }
 .container {
   display: flex;
@@ -54,7 +54,7 @@ button {
 
 .leftScreen {
   display: flex;
-  margin-left: 100px;
+  margin-left: 10%;
 }
 
 .name {
@@ -100,8 +100,8 @@ button {
   font-family: "Source Sans Pro", sans-serif;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 2em;
-  margin: 4em 4em 1em 1em;
+  padding: 1em;
+  margin: 2em 4em 0em 1em;
 }
 
 .apiName::first-letter {
@@ -112,6 +112,7 @@ button {
   padding-right: 20px;
   text-align: center;
 }
+
 .sprite-and-name img {
   height: 150px;
   width: 150px;
@@ -150,10 +151,17 @@ button {
   .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   .pokemonNames {
     height: 40vh;
+  }
+
+  .onePokemon {
+    margin: 3em;
+    height: 30%;
+    width: 75%;
   }
 
   .pikachu {
@@ -166,5 +174,28 @@ button {
 
 @media (max-width: 600px) {
 
+  .container {
+    border-bottom: 3px solid black;
+  }
 
+  .leftScreen {
+    margin: 1em 1em 0em 1em;
+  }
+
+  .pokemonNames {
+    height: 35vh;
+    width: 100%;    
+  }
+
+  .onePokemon {
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .sprite-and-name img {
+    height: 100px;
+    width: 100px;
+  
+  }
 }
