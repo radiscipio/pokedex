@@ -166,6 +166,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-bottom: 3px solid black;
+
   }
 
   .pokemonNames {
